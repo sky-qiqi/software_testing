@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+skinparam defaultFontName Arial
+
+start
+
+:i = 1;
+:total.input = 0;
+:total.valid = 0;
+:sum = 0;
+
+while (value[i] > 0 AND total.input < 100)
+  :total.input = total.input + 1;
+  if (value[i] >= minimum AND value[i] <= maximum) then (Yes)
+    :total.valid = total.valid + 1;
+    :sum = sum + value[i];
+  else (No)
+    ' Do nothing (skip)
+  endif
+  :i = i + 1;
+endwhile
+
+if (total.valid > 0) then (Yes)
+  :average = sum / total.valid;
+else (No)
+  :average = -999;
+endif
+
+stop
+
+@enduml

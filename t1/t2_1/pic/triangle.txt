@@ -1,0 +1,29 @@
+@startuml
+title Control Flow Graph for Triangle Class
+
+start
+
+:Check if a, b, c are positive;
+if (yes) then
+    :Check if a+b>c;
+    if (yes) then
+        :Check if a==b or b==c or a==c;
+        if (yes) then
+            :Check if a==b and b==c;
+            if (yes) then
+                :Return "equilateral";
+            else
+                :Return "isosceles";
+            endif
+        else
+            :Return "scalene";
+        endif
+    else
+        :Return "Not Triangle";
+    endif
+else
+    :Return "Not Triangle";
+endif
+
+end
+@enduml

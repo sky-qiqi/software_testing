@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>triangle</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- 添加 Soot 的依赖 -->
+        <dependency>
+            <groupId>org.soot-oss</groupId>
+            <artifactId>soot</artifactId>
+            <version>4.6.0</version>
+        </dependency>
+        <!-- 添加 SLF4J 的依赖以避免警告 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 使用 Maven Compiler Plugin 编译代码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <!-- 使用 Maven Exec Plugin 运行 Soot -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>soot.Main</mainClass>
+                    <arguments>
+                        <argument>-process-dir</argument>
+                        <argument>${project.build.outputDirectory}</argument>
+                        <argument>-output-dir</argument>
+                        <argument>${project.build.directory}/output</argument>
+                        <argument>-output-format</argument>
+                        <argument>jimple</argument>
+                        <argument>-p</argument>
+                        <argument>cg.spark</argument>
+                        <argument>enable</argument>
+                        <argument>-p</argument>
+                        <argument>cg.spark</argument>
+                        <argument>verbose</argument>
+                        <argument>true</argument>
+                        <argument>-p</argument>
+                        <argument>cg.spark</argument>
+                        <argument>output-cfg</argument>
+                        <argument>true</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
