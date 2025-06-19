@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="android-19">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android-19/android.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android-19/uiautomator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

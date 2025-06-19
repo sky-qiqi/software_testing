@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android-19/data/layoutlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android-19/data/icu4j.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

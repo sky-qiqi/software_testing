@@ -1,0 +1,14 @@
+{
+  "appium:platformName": "Android",
+  "appium:platformVersion": "9",
+  "appium:deviceName": "emulator-5554",
+  "appium:appPackage": "com.lht.mali.corporation.notepad",
+  "appium:appActivity": "com.example.richtext.ui.activity.NoteActivity",
+  "appium:noReset": true,
+  "appium:unicodeKeyboard": true,
+  "appium:resetKeyboard": true,
+  "appium:automationName": "Uiautomator2"
+}
+
+
+appium
